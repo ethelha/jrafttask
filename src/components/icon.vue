@@ -1,6 +1,6 @@
 <template>
   <div @click="activate()" class="icon">
-    <div :class="'plus-minus ' + [isClicked ? '' : 'collapsed']"></div>
+    <div class="plus-minus" :class="{ ' collapsed': isClicked }"></div>
   </div>
 </template>
 <script>
@@ -8,12 +8,16 @@ export default {
   name: "icon",
   data() {
     return {
-      isClicked: false,
+      isClicked: true,
     };
   },
   methods: {
     activate() {
-      this.isClicked = !this.isClicked;
+      let self = this;
+      self.isClicked = false;
+      setTimeout(function() {
+        self.isClicked = true;
+      }, 500);
     },
   },
 };
