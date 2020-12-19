@@ -51,9 +51,7 @@ export default {
           new Heading(),
           new Image(),
           new Testout(),
-          new Testinner({
-            nested: true,
-          }),
+          new Testinner(),
         ],
         content: `
           <h2>
@@ -98,34 +96,5 @@ button {
   border: none;
   background: transparent;
   outline: none;
-}
-.thePlaceholder {
-  display: block;
-  cursor: pointer;
-  text-align: center;
-  object-fit: center;
-}
-.inputfileLabel {
-  display: block;
-  overflow: hidden;
-  cursor: pointer;
-  text-align: center;
-  background-size: auto 100%;
-  background-repeat: no-repeat;
-  background-position: center center;
-  input[type="file"] {
-    position: relative;
-    height: 100%;
-    width: 100%;
-    opacity: 0;
-    cursor: pointer;
-    -moz-opacity: 0;
-  }
-  img {
-    object-fit: center;
-    vertical-align: middle;
-    width: auto;
-    height: auto;
-  }
 }
 </style>
