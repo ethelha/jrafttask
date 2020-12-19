@@ -42,10 +42,13 @@ export default class Testinner extends Node {
             newImg.src = src;
             // setBg.append(newImg);
           if(newImg){
-            this.pic = {
-              width: '100%',
-              height: newImg.height
-            }       
+            console.log(that)
+            console.log(this)
+            // that.pic = {
+            //   width: '100%',
+            //   height: newImg.height,
+            //   size:'sss'
+            // }       
             
             that.updateAttrs(
               {
@@ -66,9 +69,10 @@ export default class Testinner extends Node {
       },
       template: `
       <div class="thePlaceholder" 
-      :data-type="node.type.name" :data-done="node.attrs.done.toString()">
+      :data-type="node.type.name" :data-done="node.attrs.done.toString()" data-drag-handle>
       <label class="inputfileLabel" 
-      :style="{'background-image': 'url('+this.url+')','width': this.pic.width, 'height': this.pic.height, 'background-size': this.pic.size}">
+      :style="{'background-image': 'url('+this.url+')','width': this.pic.width, 'height': this.pic.height, 'background-size': this.pic.size}"
+      >
         <input type="file" placeholder="Click to upload" @change="onChange"/>
       </label>
       </div>
@@ -94,7 +98,7 @@ export default class Testinner extends Node {
         console.log(node.attrs)
         return [ 'div', {
             'data-type': this.name,
-            'data-done': done,
+            'data-done': done.toString(),
             for: this.name,      
             class: 'thePlaceholder',
             contenteditable: 'false'    
